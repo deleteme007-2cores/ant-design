@@ -1,6 +1,6 @@
 {
-  "name": "antd",
-  "version": "5.26.0",
+  "name": "delete-antd",
+  "version": "5.26.2",
   "description": "An enterprise-class UI design language and React components implementation",
   "license": "MIT",
   "funding": {
@@ -70,12 +70,9 @@
     "lint:style": "tsx scripts/check-cssinjs.tsx",
     "llms": "tsx scripts/generate-llms.ts",
     "prepare": "is-ci || husky && dumi setup",
-    "prepublishOnly": "tsx ./scripts/pre-publish.ts",
     "prettier": "prettier -c --write . --cache",
     "prettier-import-sort": "npm run prettier -- --plugin=@ianvs/prettier-plugin-sort-imports",
     "biome": "biome check --write",
-    "pub": "echo 'Please use `npm publish` instead.'",
-    "postpublish": "tsx scripts/post-publish.ts",
     "presite": "npm run prestart",
     "site": "dumi build && cp .surgeignore _site && npm run llms",
     "size-limit": "size-limit",
@@ -99,7 +96,8 @@
     "token:statistic": "tsx scripts/collect-token-statistic.ts",
     "tsc": "tsc --noEmit",
     "tsc:old": "tsc --noEmit -p tsconfig-old-react.json",
-    "version": "tsx scripts/generate-version.ts"
+    "version": "tsx scripts/generate-version.ts",
+    "pub": "npm publish --access=public"
   },
   "browserslist": [
     "defaults"
@@ -144,7 +142,7 @@
     "rc-rate": "~2.13.1",
     "rc-resize-observer": "^1.4.3",
     "rc-segmented": "~2.7.0",
-    "rc-select": "~14.16.8",
+    "rc-select": "npm:@deleteme007/rc-select@0.0.3",
     "rc-slider": "~11.1.8",
     "rc-steps": "~6.0.1",
     "rc-switch": "~4.1.0",

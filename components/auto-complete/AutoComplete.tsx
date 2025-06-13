@@ -75,6 +75,7 @@ const AutoComplete: React.ForwardRefRenderFunction<RefSelectProps, AutoCompleteP
     onOpenChange,
     styles,
     classNames,
+    activeOptionFilter,
   } = props;
   const childNodes: React.ReactElement[] = toArray(children);
 
@@ -190,6 +191,7 @@ const AutoComplete: React.ForwardRefRenderFunction<RefSelectProps, AutoCompleteP
         // Internal api
         getInputElement,
       }}
+      activeOptionFilter={activeOptionFilter}
     >
       {optionChildren}
     </Select>
